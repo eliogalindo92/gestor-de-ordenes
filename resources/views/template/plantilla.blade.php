@@ -10,18 +10,18 @@
     <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
     <title>@yield('titulo')</title>
 </head>
-<body>
+<body class="bg-light">
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">@yield('vista')</a>
+                <a class="navbar-brand" href="{{route('gestor.index')}}">S.G.O.D</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link @yield('btn-inicio')" aria-current="page" href="#"></a>
+                            <a class="nav-link @yield('btn-inicio')" aria-current="page" href="{{route('gestor.index')}}">Inicio</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link  @yield('btn-productos')" href="{{route('producto.index') }}">Ver productos</a>
@@ -39,6 +39,10 @@
                 </div>
             </div>
         </nav>
+        <!--Creo tabla generada dentro del container-->
+        <div class="container shadow bg-white">
+            @yield('tabla')
+        </div>
     </header>
     @yield('contenido')
 </body>

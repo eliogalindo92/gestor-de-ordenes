@@ -10,12 +10,12 @@ class Producto extends Model
 {
     use HasFactory;
     use softDeletes;
-    protected $table = 'productos';
     protected $fillable =
         [
             'codigo',
             'descripcion',
             'unidad_de_medida',
+            'almacen',
             'existencia_en_almacen'
         ];
 }

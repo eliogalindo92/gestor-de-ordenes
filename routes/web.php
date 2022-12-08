@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\GestorController;
 use App\Http\Controllers\ProductoController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,8 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/gestor', function () {
-    return view('gestor');
+Route::get('/', function () {
+    return view('welcome');
 });
-
+Route::get('/gestor', [GestorController::class, 'index'])->name('gestor.index');
 Route::get('/productos', [ProductoController::class, 'index'])->name('producto.index');
