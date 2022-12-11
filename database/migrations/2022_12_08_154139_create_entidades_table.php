@@ -14,9 +14,10 @@ return new class extends Migration
     public function up()
     {
         Schema::create('entidades', function (Blueprint $table) {
-            $table->id();
-            $table->string('nombre', 60);
+            $table->bigIncrements('id_entidad');
+            $table->string('nombre_entidad', 60);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
