@@ -14,7 +14,10 @@ class PlanController extends Controller
      */
     public function index()
     {
-        //
+        $planes = Plan::orderByDesc('id')->get();
+        $entidadController = new EntidadController();
+        $entidades = $entidadController->index();
+        return view('plan.gestionar_plan', compact('planes'), compact('entidades'));
     }
 
     /**
@@ -24,7 +27,9 @@ class PlanController extends Controller
      */
     public function create()
     {
-        //
+        $entidadController = new EntidadController();
+        $entidades = $entidadController->index();
+        return view('plan.elaborar_plan', compact('entidades'));
     }
 
     /**
@@ -52,12 +57,15 @@ class PlanController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Plan  $plan
+     * @param  \App\Models\Plan $plan
      * @return \Illuminate\Http\Response
      */
     public function edit(Plan $plan)
     {
-        //
+        /*$entidadController = new EntidadController();
+        $entidades = $entidadController->index();
+        return view('plan.editar_plan', compact('plan'), compact('entidades'));*/
+        dd($plan);
     }
 
     /**

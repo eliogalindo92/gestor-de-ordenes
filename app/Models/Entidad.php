@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Entidad extends Model
 {
+    protected $table = 'entidades';
     use HasFactory;
     use SoftDeletes;
 

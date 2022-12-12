@@ -14,7 +14,7 @@ class OrdenController extends Controller
      */
     public function index()
     {
-        //
+        return view('orden.gestionar_orden');
     }
 
     /**

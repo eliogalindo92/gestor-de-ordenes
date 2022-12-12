@@ -14,7 +14,7 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        $productos = Producto::orderByDesc('id_producto')->get();
+        $productos = Producto::orderByDesc('id')->get();
 
         return view('producto.mostrar_producto', compact('productos'));
     }

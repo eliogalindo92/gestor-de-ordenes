@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Solicitud extends Model
 {
+    protected $table = 'solicitudes';
     use HasFactory;
     use SoftDeletes;
 
@@ -16,7 +17,7 @@ class Solicitud extends Model
             'numero_solicitud',
             'fecha_solicitud',
             'descripcion_producto',
-            'unidad_medida_pruducto',
+            'unidad_medida_producto',
             'cantidad_solicitada'
         ];
 }

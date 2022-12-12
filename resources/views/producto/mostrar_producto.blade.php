@@ -1,9 +1,13 @@
-@extends('template.plantilla')
+@extends('plantillas.plantilla')
 
 @section('titulo', 'Productos')
-@section('btn-productos', 'active')
 @section('contenido')
-    @section('tabla')
+@section('btn-productos', 'active')
+@section('titulo_principal', 'Productos')
+
+@section('clase_tabla', 'card')
+@section('nombre_tabla', 'Listado de productos')
+@section('tabla')
         <table class="table table-stripped table-hover">
             <thead>
             <tr>
@@ -14,7 +18,7 @@
                     Descripción
                 </th>
                 <th>
-                    Unidad de medida
+                    U/M
                 </th>
                 <th>
                     Almacén
@@ -31,7 +35,7 @@
             @foreach ($productos as $producto)
                 <tr>
                     <td>
-                        {{$producto -> codigo}}
+                        {{$producto -> codigo_producto}}
                     </td>
                     <td>
                         {{$producto -> descripcion}}

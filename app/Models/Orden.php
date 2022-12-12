@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Orden extends Model
 {
+    protected $table = 'ordenes';
     use HasFactory;
     use SoftDeletes;
 

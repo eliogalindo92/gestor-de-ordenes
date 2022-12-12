@@ -14,7 +14,10 @@ class SolicitudController extends Controller
      */
     public function index()
     {
-        //
+        $solicitudes = Solicitud::orderByDesc('id')->get();
+        $entidadController = new EntidadController();
+        $entidades = $entidadController->index();
+        return view('solicitud.mostrar_solicitud', compact('solicitudes'), compact('entidades'));
     }
 
     /**

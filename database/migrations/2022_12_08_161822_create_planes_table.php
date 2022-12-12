@@ -14,11 +14,11 @@ return new class extends Migration
     public function up()
     {
         Schema::create('planes', function (Blueprint $table) {
-            $table->bigIncrements('id_plan');
+            $table->bigIncrements('id');
             $table->unsignedBigInteger('id_entidad');
             $table->string('numero_plan');
             $table->timestamp('fecha_distribucion');
-            $table->foreign('id_entidad')->references('id_entidad')->on('entidades')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('id_entidad')->references('id')->on('entidades')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
             $table->softDeletes();
         });

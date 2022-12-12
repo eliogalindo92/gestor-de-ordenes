@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Plan extends Model
 {
-
+    protected $table = 'planes';
     use HasFactory;
     use SoftDeletes;
 

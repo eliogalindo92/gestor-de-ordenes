@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('productos', function (Blueprint $table) {
-            $table->bigIncrements('id_producto');
+            $table->bigIncrements('id');
             $table->string('codigo_producto', 60);
             $table->string('descripcion');
             $table->string('unidad_de_medida', 10);

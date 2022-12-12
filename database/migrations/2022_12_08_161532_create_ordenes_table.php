@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('ordenes', function (Blueprint $table) {
-            $table->bigIncrements('id_orden');
+            $table->bigIncrements('id');
             $table->unsignedBigInteger('id_entidad');
             $table->string('numero_orden', 10);
             $table->timestamp('fecha_elaboracion');
@@ -24,7 +24,7 @@ return new class extends Migration
             $table->float('cantidad_ordenada');
 //            $table->float('cantidad_despachada')->nullable();
             $table->float('existencia_en_almacen');
-            $table->foreign('id_entidad')->references('id_entidad')->on('entidades')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('id_entidad')->references('id')->on('entidades')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
             $table->softDeletes();
         });

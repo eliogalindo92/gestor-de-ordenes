@@ -8,13 +8,15 @@
     <!--Bootstrap-->
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
+    <link rel="stylesheet" href="{{asset('css/estilos.css')}}">
     <title>@yield('titulo')</title>
 </head>
-<body class="bg-light">
+<body class="bg-light" id="cuerpo_pagina">
+@yield('contenido')
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="{{route('gestor.index')}}">S.G.O.D</a>
+                <a class="navbar-brand" href="{{route('gestor.index')}}"><h2>Sistema G.O.D INRE</h2></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -24,29 +26,48 @@
                             <a class="nav-link @yield('btn-inicio')" aria-current="page" href="{{route('gestor.index')}}">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link  @yield('btn-productos')" href="{{route('producto.index') }}">Ver productos</a>
+                            <a class="nav-link @yield('btn-productos')" href="{{route('producto.index') }}">Consultar disponibilidad  de productos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Gestionar órdenes de despacho</a>
+                            <a class="nav-link @yield('btn-solicitudes')" href="{{route('solicitud.index')}}">Consultar solicitudes de productos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Consultar solicitudes de productos</a>
+                            <a class="nav-link @yield('btn-planes')" href="{{route('plan.index')}}">Gestionar planes de distribución</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Consultar planes de distribución</a>
+                            <a class="nav-link @yield('btn-ordenes')" href="{{route('orden.index')}}">Gestionar órdenes de despacho</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
-        <!--Creo tabla generada dentro del container-->
-        <div class="container shadow bg-white">
+    </header>
+
+    <!--Creo sub-menú y tabla generada dentro del container-->
+    <div class="container shadow bg-white" id="contenido_principal">
+        <h2>
+            @yield('titulo_principal')
+        </h2>
+
+        <div class="col-sm-12">
+            @yield('sub-menu')
+        </div>
+
+        <div class="@yield('clase_form')" id="form">
+            @yield('formulario')
+        </div>
+
+        <div class="@yield('clase_tabla')" id="card_tabla">
+            <h4 id="nombre_tabla">
+                @yield('nombre_tabla')
+            </h4>
             @yield('tabla')
         </div>
-    </header>
-    @yield('contenido')
+    </div>
 </body>
+
 <footer>
     @yield('pie')
 </footer>
+
 </html>

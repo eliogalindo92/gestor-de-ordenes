@@ -14,7 +14,7 @@ class EntidadController extends Controller
      */
     public function index()
     {
-        //
+        return Entidad::orderByDesc('id')->get();
     }
 
     /**
