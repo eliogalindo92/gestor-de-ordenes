@@ -63,9 +63,9 @@
             </h4>
             @yield('tabla')
         </div>
+            @yield('alerta')
     </div>
 </body>
-
 <footer>
     @yield('pie')
 </footer>

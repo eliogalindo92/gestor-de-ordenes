@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('solicitudes', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('id_entidad');
-            $table->string('numero_solicitud', 10);
+            $table->integer('numero_solicitud');
             $table->timestamp('fecha_solicitud');
             $table->string('descripcion_producto');
             $table->string('unidad_medida_producto', 10);

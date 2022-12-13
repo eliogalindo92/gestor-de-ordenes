@@ -40,7 +40,18 @@ class PlanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+/*        $datos = $request->validated();
+        $plan = Plan::create($datos);
+        return redirect()->route('plan.index');*/
+
+        $datos = $request->validate(
+
+            [
+                'numero_plan'   => 'required|min:1|max:10000',
+                'fecha_distribucion' => 'required',
+                'nombre_entidad' => 'required'
+            ]);
+        dd($datos);
     }
 
     /**
@@ -62,10 +73,9 @@ class PlanController extends Controller
      */
     public function edit(Plan $plan)
     {
-        /*$entidadController = new EntidadController();
+        $entidadController = new EntidadController();
         $entidades = $entidadController->index();
-        return view('plan.editar_plan', compact('plan'), compact('entidades'));*/
-        dd($plan);
+        return view('plan.editar_plan', compact('plan'), compact('entidades'));
     }
 
     /**
@@ -77,7 +87,9 @@ class PlanController extends Controller
      */
     public function update(Request $request, Plan $plan)
     {
-        //
+/*        $datos = $request->validated();
+        $plan = Plan::create($datos);
+        return redirect()->route('plan.index');*/
     }
 
     /**

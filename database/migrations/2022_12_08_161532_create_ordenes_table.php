@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('ordenes', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('id_entidad');
-            $table->string('numero_orden', 10);
+            $table->integer('numero_orden');
             $table->timestamp('fecha_elaboracion');
             $table->string('codigo_producto', 60);
             $table->string('descripcion_producto');

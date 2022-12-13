@@ -1,12 +1,12 @@
 @csrf
 <div class="col-md-2">
     <label for="NumeroPlan" class="form-label">Número del plan</label>
-    <input type="number" class="form-control" name="numero" id="NumeroPlan" value="{{old(value('nombre'))}}">
+    <input type="number" class="form-control" name="numero_plan" id="NumeroPlan" value="{{old(value('numero_plan'))}}">
 </div>
 
 <div class="col-md-5">
     <label for="FechaPlan" class="form-label">Fecha de distribución</label>
-    <input type="datetime-local" class="form-control" id="FechaPlan">
+    <input type="datetime-local" class="form-control" name="fecha_distribucion" id="FechaPlan" value="{{old('fecha_distribucion')}}">
 </div>
 
 <div class="col-md-5">

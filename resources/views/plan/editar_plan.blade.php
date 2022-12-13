@@ -13,7 +13,18 @@
 
     @section('clase_form', 'card')
     @section('formulario')
-        <form class="row g-3 needs-validation" novalidate action="{{route('plan.store')}}" method="post">
+        <form class="row g-3 needs-validation" novalidate action="{{route('plan.update')}}" method="post">
             <x-form-plan :entidades="$entidades" :plan="$plan"/>
         </form>
     @endsection
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+@endsection
+
