@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('planes', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('id_entidad');
-            $table->integer('numero_plan');
+            $table->integer('numero_plan')->unique();
             $table->timestamp('fecha_distribucion');
             $table->foreign('id_entidad')->references('id')->on('entidades')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();

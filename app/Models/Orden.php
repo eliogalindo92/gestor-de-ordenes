@@ -14,6 +14,7 @@ class Orden extends Model
 
     protected $fillable =
         [
+            'id_entidad',
             'numero_orden',
             'fecha_elaboracion',
             'codigo_producto',

@@ -44,7 +44,7 @@
         </tr>
         </thead>
         <tbody>
-       {{-- @foreach ($solicitudes as $solicitud)
+{{--        @foreach ($solicitudes as $solicitud)
             <tr>
                 <td>
                     {{$solicitud -> numero_solicitud}}
@@ -54,7 +54,7 @@
                 </td>
                 <td>
                     @foreach($entidades as $entidad)
-                        @if($solicitud->id_entidad == $entidad->id_entidad)
+                        @if($solicitud->id_entidad == $entidad->id)
                             {{$entidad->nombre_entidad}}
                         @endif
                     @endforeach

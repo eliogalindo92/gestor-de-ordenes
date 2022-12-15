@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('inicio');
 });
 Route::get('/gestor', [GestorController::class, 'index'])->name('gestor.index');
 Route::get('/productos', [ProductoController::class, 'index'])->name('producto.index');
@@ -27,7 +27,10 @@ Route::get('/solicitudes', [SolicitudController::class, 'index'])->name('solicit
 Route::get('/ordenes', [OrdenController::class, 'index'])->name('orden.index');
 Route::get('/planes', [PlanController::class, 'index'])->name('plan.index');
 
+//Rutas del modelo Plan de distribución
 Route::get('/elaborar-plan', [PlanController::class, 'create'])->name('plan.create');
 Route::get('/{plan}/editar-plan', [PlanController::class, 'edit'])->name('plan.edit');
 Route::post('/guardar-plan', [PlanController::class, 'store'])->name('plan.store');
-
+Route::put('/{plan}/actualizar-plan',[PlanController::class, 'update'])->name('plan.update');
+Route::get('/{plan}/mostrar-plan', [PlanController::class, 'show'])->name('plan.show');
+Route::delete('/{plan}/eliminar-plan',[PlanController::class, 'destroy'])->name('plan.destroy');

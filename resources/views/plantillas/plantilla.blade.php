@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
     <link rel="stylesheet" href="{{asset('css/estilos.css')}}">
+    <!--Livewire-->
+    @livewireStyles
     <title>@yield('titulo')</title>
 </head>
 <body class="bg-light" id="cuerpo_pagina">
@@ -16,7 +18,7 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="{{route('gestor.index')}}"><h2>Sistema G.O.D INRE</h2></a>
+                <a class="navbar-brand" href="{{route('gestor.index')}}"><h2>Gestor INRE</h2></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -66,8 +68,9 @@
             @yield('alerta')
     </div>
 </body>
+
 <footer>
     @yield('pie')
 </footer>
-
+@livewireScripts
 </html>

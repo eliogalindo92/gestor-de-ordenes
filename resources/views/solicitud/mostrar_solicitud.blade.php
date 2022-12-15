@@ -60,6 +60,9 @@
                     <td>
                         {{$solicitud -> cantidad_solicitada}}
                     </td>
+                    <td>
+                        <a href="">Mostrar</a>
+                    </td>
                 </tr>
             @endforeach
             </tbody>
