@@ -65,8 +65,8 @@
                     {{$orden -> cantidad_ordenada}}
                 </td>
                 <td>
-                 <a href="{{ route('orden.edit', $orden) }}">Editar</a>
-                 <a href="{{ route('orden.show', $orden) }}">Mostrar</a>
+                 <a class="btn btn-sm btn-warning" href="{{ route('orden.edit', $orden) }}">Editar</a>
+                 <a class="btn btn-sm btn-primary" href="{{ route('orden.show', $orden) }}">Mostrar</a>
                 </td>
             </tr>
         @endforeach

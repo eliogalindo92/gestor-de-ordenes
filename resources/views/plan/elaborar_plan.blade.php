@@ -7,8 +7,8 @@
 @section('titulo_principal','Elaborar plan de distribución')
 
 @section('sub-menu')
-    <a class="btn btn-link" href="{{route('plan.create')}}">Elaborar plan de distribución</a>
-    <a class="btn btn-link" href="{{route('plan.index')}}">Listar planes de distribución</a>
+    <a class="btn btn-sm btn-outline-dark" href="{{route('plan.create')}}">Elaborar plan</a>
+    <a class="btn btn-sm btn-outline-dark" href="{{route('plan.index')}}">Listar planes</a>
 @endsection
 
 @section('clase_form', 'card')

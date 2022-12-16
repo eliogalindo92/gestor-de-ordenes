@@ -6,8 +6,8 @@
     @section('btn-planes', 'active')
     @section('titulo_principal','Plan de distribución ')
     @section('sub-menu')
-        <a class="btn btn-link" href="{{route('plan.reporte', $plan)}}">Exportar a PDF</a>
-        <a class="btn btn-link" href="{{route('plan.index')}}">Listar planes de distribución</a>
+        <a class="btn btn-sm btn-outline-dark" href="{{route('plan.reporte', $plan)}}">Exportar a PDF</a>
+        <a class="btn btn-sm btn-outline-dark" href="{{route('plan.index')}}">Listar planes</a>
     @endsection
     @section('clase_form', 'card')
     @section('formulario')
@@ -23,9 +23,14 @@
                 @csrf
                 @method('delete')
                 <div class="col-sm-12 text-end">
-                    <button class="btn btn-danger" type="submit">Eliminar</button>
+                    <button class="btn btn-danger" onclick="alerta()" type="submit">Eliminar</button>
                 </div>
             </form>
+    <script type="text/javascript">
+        function alerta() {
+            alertify.success("Plan eliminado con éxito.");
+        }
+    </script>
     @endsection
 @endsection
 

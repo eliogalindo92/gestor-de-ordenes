@@ -48,7 +48,7 @@
                     {{$producto -> existencia_en_almacen}}
                 </td>
                 <td>
-                    <a href="">Elaborar orden</a>
+                    <a class="btn btn-sm btn-primary" href="">Elaborar orden</a>
                 </td>
             </tr>
         @endforeach

@@ -5,10 +5,15 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--Estilos-->
+    <link rel="stylesheet" href="{{asset('css/estilos.css')}}">
     <!--Bootstrap-->
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
-    <link rel="stylesheet" href="{{asset('css/estilos.css')}}">
+    <!--AlertifyJS-->
+    <link rel="stylesheet" type="text/css" href="{{asset('alertifyjs/css/themes/default.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('alertifyjs/css/alertify.css')}}">
+    <script src="{{asset('alertifyjs/alertify.min.js')}}"></script>
     <!--Livewire-->
     @livewireStyles
     <title>@yield('titulo')</title>
@@ -25,7 +30,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link @yield('btn-inicio')" aria-current="page" href="{{route('gestor.index')}}">Inicio</a>
+                            <a class="nav-link @yield('btn-inicio')" aria-current="page" href="{{--{{route('gestor.index')}}--}}">Inicio</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link @yield('btn-productos')" href="{{route('producto.index') }}">Consultar disponibilidad  de productos</a>

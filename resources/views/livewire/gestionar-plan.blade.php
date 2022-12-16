@@ -40,8 +40,8 @@
                     @endforeach
                 </td>
                 <td>
-                    <a href="{{ route('plan.edit', $plan) }}">Editar</a>
-                    <a href="{{ route('plan.show', $plan) }}">Mostrar</a>
+                    <a class="btn btn-sm btn-warning" href="{{ route('plan.edit', $plan) }}">Editar</a>
+                    <a class="btn btn-sm btn-primary" href="{{ route('plan.show', $plan) }}">Mostrar</a>
                 </td>
             </tr>
         @endforeach

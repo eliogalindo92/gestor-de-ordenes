@@ -55,5 +55,5 @@
 </div>
 
 <div class="col-sm-12 text-end">
-    <button class="btn btn-primary" type="submit">Guardar</button>
+    <button class="btn btn-success" type="submit">Guardar</button>
 </div>
