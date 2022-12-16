@@ -37,6 +37,7 @@ Route::delete('/{plan}/eliminar-plan',[PlanController::class, 'destroy'])->name(
 
 //Rutas del modelo Orden de despacho
 Route::get('/elaborar-orden', [OrdenController::class, 'create'])->name('orden.create');
+Route::get('/{producto}/elaborar-orden-alt', [OrdenController::class, 'create_alt'])->name('orden.create_alt');
 Route::get('/{orden}/editar-orden', [OrdenController::class, 'edit'])->name('orden.edit');
 Route::post('/guardar-orden', [OrdenController::class, 'store'])->name('orden.store');
 Route::put('/{orden}/actualizar-orden',[OrdenController::class, 'update'])->name('orden.update');

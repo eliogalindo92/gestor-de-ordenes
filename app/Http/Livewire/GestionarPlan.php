@@ -12,7 +12,7 @@ class GestionarPlan extends Component
 {
     use WithPagination;
     public string $busqueda = '';
-    public int $paginacion = 7;
+    public int $paginacion = 5;
     protected $queryString =
     [
         'busqueda' =>['except' =>'', 'as' => 'buscado'],

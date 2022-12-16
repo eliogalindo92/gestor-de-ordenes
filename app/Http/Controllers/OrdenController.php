@@ -34,6 +34,12 @@ class OrdenController extends Controller
         return view('orden.elaborar_orden', compact('entidades', 'productos'));
     }
 
+    public function create_alt(Producto $producto)
+    {
+        $entidades = Entidad::orderByDesc('id')->get();
+        return view('orden.elaborar_orden_alt', compact('entidades', 'producto'));
+    }
+
     /**
      * Store a newly created resource in storage.
      *

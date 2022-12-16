@@ -1,4 +1,4 @@
-<div>
+<div class="table-responsive">
     <div class="row">
         <div class="col-sm-9"></div>
         <div class="col-sm-3">
@@ -40,6 +40,7 @@
                     @endforeach
                 </td>
                 <td>
+
                     <a class="btn btn-sm btn-warning" href="{{ route('plan.edit', $plan) }}">Editar</a>
                     <a class="btn btn-sm btn-primary" href="{{ route('plan.show', $plan) }}">Mostrar</a>
                 </td>

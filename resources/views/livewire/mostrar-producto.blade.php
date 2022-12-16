@@ -1,4 +1,4 @@
-<div>
+<div class="table-responsive">
     <div class="row">
         <div class="col-sm-9"></div>
         <div class="col-sm-3">
@@ -48,7 +48,7 @@
                     {{$producto -> existencia_en_almacen}}
                 </td>
                 <td>
-                    <a class="btn btn-sm btn-primary" href="">Elaborar orden</a>
+                    <a class="btn btn-sm btn-primary" href="{{route('orden.create_alt', $producto)}}">Elaborar orden</a>
                 </td>
             </tr>
         @endforeach
