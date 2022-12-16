@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('descripcion_producto');
             $table->string('unidad_medida_producto', 10);
             $table->float('cantidad_solicitada');
+            $table->boolean('finalizada')->default(false);
             $table->foreign('id_entidad')->references('id')->on('entidades')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
             $table->softDeletes();

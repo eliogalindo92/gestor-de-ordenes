@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('productos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('codigo_producto', 60);
-            $table->string('descripcion');
+            $table->string('descripcion_producto');
             $table->string('unidad_de_medida', 10);
             $table->string('almacen', 60);
             $table->float('existencia_en_almacen');

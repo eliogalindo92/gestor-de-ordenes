@@ -1,10 +1,14 @@
 @extends('plantillas.plantilla')
 
-@section('titulo', 'Editar plan')
+@section('titulo', 'Mostrar plan')
 
 @section('contenido')
     @section('btn-planes', 'active')
-    @section('titulo_principal','Mostrar plan de distribución ')
+    @section('titulo_principal','Plan de distribución ')
+    @section('sub-menu')
+        <a class="btn btn-link" href="{{route('plan.reporte', $plan)}}">Exportar a PDF</a>
+        <a class="btn btn-link" href="{{route('plan.index')}}">Listar planes de distribución</a>
+    @endsection
     @section('clase_form', 'card')
     @section('formulario')
     <ul>

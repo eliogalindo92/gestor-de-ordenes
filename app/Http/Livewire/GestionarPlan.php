@@ -3,16 +3,16 @@
 namespace App\Http\Livewire;
 
 use App\Http\Controllers\EntidadController;
+use App\Models\Entidad;
 use App\Models\Plan;
-use http\QueryString;
 use Livewire\Component;
 use Livewire\WithPagination;
 
 class GestionarPlan extends Component
 {
     use WithPagination;
-    public $busqueda = '';
-    public $paginacion = 7;
+    public string $busqueda = '';
+    public int $paginacion = 7;
     protected $queryString =
     [
         'busqueda' =>['except' =>'', 'as' => 'buscado'],
@@ -22,9 +22,7 @@ class GestionarPlan extends Component
 
     public function render()
     {
-        $entidadController = new EntidadController();
-        $entidades = $entidadController->index();
-
+        $entidades = Entidad::orderByDesc('id')->get();
         $planes = $this->consulta();
         $planes = $planes->paginate($this->paginacion);
 

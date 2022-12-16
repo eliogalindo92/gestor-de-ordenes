@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\PlanRequest;
+use App\Models\Entidad;
 use App\Models\Plan;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class PlanController extends Controller
 {
@@ -25,8 +27,7 @@ class PlanController extends Controller
      */
     public function create()
     {
-        $entidadController = new EntidadController();
-        $entidades = $entidadController->index();
+        $entidades = Entidad::orderByDesc('id')->get();
         return view('plan.elaborar_plan', compact('entidades'));
     }
 
@@ -62,9 +63,8 @@ class PlanController extends Controller
      */
     public function edit(Plan $plan)
     {
-        $entidadController = new EntidadController();
-        $entidades = $entidadController->index();
-        return view('plan.editar_plan', compact('plan'), compact('entidades'));
+        $entidades = Entidad::orderByDesc('id')->get();
+        return view('plan.editar_plan', compact('plan','entidades'));
     }
 
     /**
@@ -91,5 +91,12 @@ class PlanController extends Controller
     {
         $plan->delete();
         return redirect()->route('plan.index');
+    }
+
+    public function reporte_pdf(Plan $plan)
+    {
+        $pdf = Pdf::loadView('plan.exportar_plan', compact('plan'));
+        $pdf->setPaper('A4', 'landscape');
+        return $pdf->stream();
     }
 }

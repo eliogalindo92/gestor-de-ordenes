@@ -3,9 +3,9 @@
 namespace App\View\Components;
 
 use Carbon\Carbon;
-use Illuminate\Support\Facades\App;
 use Illuminate\View\Component;
 use App\Models\Plan;
+use App\Models\Entidad;
 
 class FormPlan extends Component
 {

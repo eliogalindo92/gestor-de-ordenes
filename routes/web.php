@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('inicio');
+    return view('gestor');
 });
 Route::get('/gestor', [GestorController::class, 'index'])->name('gestor.index');
 Route::get('/productos', [ProductoController::class, 'index'])->name('producto.index');
@@ -34,3 +34,16 @@ Route::post('/guardar-plan', [PlanController::class, 'store'])->name('plan.store
 Route::put('/{plan}/actualizar-plan',[PlanController::class, 'update'])->name('plan.update');
 Route::get('/{plan}/mostrar-plan', [PlanController::class, 'show'])->name('plan.show');
 Route::delete('/{plan}/eliminar-plan',[PlanController::class, 'destroy'])->name('plan.destroy');
+
+//Rutas del modelo Orden de despacho
+Route::get('/elaborar-orden', [OrdenController::class, 'create'])->name('orden.create');
+Route::get('/{orden}/editar-orden', [OrdenController::class, 'edit'])->name('orden.edit');
+Route::post('/guardar-orden', [OrdenController::class, 'store'])->name('orden.store');
+Route::put('/{orden}/actualizar-orden',[OrdenController::class, 'update'])->name('orden.update');
+Route::get('/{orden}/mostrar-orden', [OrdenController::class, 'show'])->name('orden.show');
+Route::delete('/{orden}/eliminar-orden',[OrdenController::class, 'destroy'])->name('orden.destroy');
+
+//Rutas para los reportes
+Route::get('/{plan}/reporte-plan', [PlanController::class, 'reporte_pdf'])->name('plan.reporte');
+Route::get('/{orden}/reporte-orden', [PlanController::class, 'reporte_pdf'])->name('orden.reporte');
+

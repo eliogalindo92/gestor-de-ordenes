@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\OrdenRequest;
+use App\Models\Entidad;
 use App\Models\Orden;
+use App\Models\Producto;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 
 class OrdenController extends Controller
@@ -14,6 +18,7 @@ class OrdenController extends Controller
      */
     public function index()
     {
+
         return view('orden.gestionar_orden');
     }
 
@@ -24,7 +29,9 @@ class OrdenController extends Controller
      */
     public function create()
     {
-        //
+        $entidades = Entidad::orderByDesc('id')->get();
+        $productos = Producto::orderByDesc('id')->get();
+        return view('orden.elaborar_orden', compact('entidades', 'productos'));
     }
 
     /**
@@ -33,9 +40,11 @@ class OrdenController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(OrdenRequest $request)
     {
-        //
+        $datos = $request->validated();
+        $orden=Orden::create($datos);
+        return redirect()->route('orden.index');
     }
 
     /**
@@ -46,7 +55,7 @@ class OrdenController extends Controller
      */
     public function show(Orden $orden)
     {
-        //
+        return view('orden.mostrar_orden', compact('orden'));
     }
 
     /**
@@ -57,7 +66,9 @@ class OrdenController extends Controller
      */
     public function edit(Orden $orden)
     {
-        //
+        $entidades =Entidad::orderByDesc('id')->get();
+        $productos = Producto::orderByDesc('id')->get();
+        return view('orden.editar_orden', compact('orden', 'entidades', 'productos'));
     }
 
     /**
@@ -67,9 +78,11 @@ class OrdenController extends Controller
      * @param  \App\Models\Orden  $orden
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Orden $orden)
+    public function update(OrdenRequest $request, Orden $orden)
     {
-        //
+        $datos = $request->validated();
+        $orden->update($datos);
+        return redirect()->route('orden.index');
     }
 
     /**
@@ -80,6 +93,14 @@ class OrdenController extends Controller
      */
     public function destroy(Orden $orden)
     {
-        //
+        $orden->delete();
+        return redirect()->route('orden.index');
+    }
+
+    public function reporte_pdf(Orden $orden)
+    {
+        $pdf = Pdf::loadView('orden.exportar_orden', compact('orden'));
+        $pdf->setPaper('A4', 'landscape');
+        return $pdf->stream();
     }
 }

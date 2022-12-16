@@ -14,9 +14,10 @@ class Producto extends Model
     protected $fillable =
         [
             'codigo_producto',
-            'descripcion',
+            'descripcion_producto',
             'unidad_de_medida',
             'almacen',
-            'existencia_en_almacen'
+            'existencia_en_almacen',
+            'finalizada'
         ];
 }

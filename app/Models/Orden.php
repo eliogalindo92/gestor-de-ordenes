@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Orden extends Model
 {
     protected $table = 'ordenes';
+    protected $dates = ['fecha_elaboracion'];
     use HasFactory;
     use SoftDeletes;
 
@@ -19,7 +20,7 @@ class Orden extends Model
             'fecha_elaboracion',
             'codigo_producto',
             'descripcion_producto',
-            'unidad_medida',
+            'unidad_de_medida',
             'cantidad_ordenada',
             'existencia_en_almacen'
         ];
