@@ -61,7 +61,8 @@ class OrdenController extends Controller
      */
     public function show(Orden $orden)
     {
-        return view('orden.mostrar_orden', compact('orden'));
+        $entidades = Entidad::orderByDesc('id')->get();
+        return view('orden.mostrar_orden', compact('orden', 'entidades'));
     }
 
     /**
@@ -105,7 +106,8 @@ class OrdenController extends Controller
 
     public function reporte_pdf(Orden $orden)
     {
-        $pdf = Pdf::loadView('orden.exportar_orden', compact('orden'));
+        $entidades =Entidad::orderByDesc('id')->get();
+        $pdf = Pdf::loadView('orden.exportar_orden', compact('orden', 'entidades'));
         $pdf->setPaper('A4', 'landscape');
         return $pdf->stream();
     }

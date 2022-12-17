@@ -11,9 +11,9 @@
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
     <!--AlertifyJS-->
-    <link rel="stylesheet" type="text/css" href="{{asset('alertifyjs/css/themes/default.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('alertifyjs/css/alertify.css')}}">
-    <script src="{{asset('alertifyjs/alertify.min.js')}}"></script>
+    <link rel="stylesheet" type="text/css" href="{{asset('css/themes/default.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/alertify.css')}}">
+    <script src="{{asset('js/alertify.min.js')}}"></script>
     <!--Livewire-->
     @livewireStyles
     <title>@yield('titulo')</title>
@@ -21,16 +21,16 @@
 <body class="bg-light" id="cuerpo_pagina">
 @yield('contenido')
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
             <div class="container-fluid">
-                <a class="navbar-brand" href="{{route('gestor.index')}}"><h2>Gestor INRE</h2></a>
+                <a class="navbar-brand" href="{{route('gestor.index')}}"><h2 >Gestor INRE</h2></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link @yield('btn-inicio')" aria-current="page" href="{{--{{route('gestor.index')}}--}}">Inicio</a>
+                            <a class="nav-link @yield('btn-inicio')" aria-current="page" href="{{route('gestor.index')}}">Inicio</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link @yield('btn-productos')" href="{{route('producto.index') }}">Consultar disponibilidad  de productos</a>
@@ -49,6 +49,11 @@
             </div>
         </nav>
     </header>
+<div class="container-fluid" id="carrusel">
+    <div class="row-content">
+    @yield('carrusel')
+    </div>
+</div>
 
     <!--Creo sub-menú y tabla generada dentro del container-->
     <div class="container shadow bg-white" id="contenido_principal">

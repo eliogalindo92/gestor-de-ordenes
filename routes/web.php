@@ -46,5 +46,5 @@ Route::delete('/{orden}/eliminar-orden',[OrdenController::class, 'destroy'])->na
 
 //Rutas para los reportes
 Route::get('/{plan}/reporte-plan', [PlanController::class, 'reporte_pdf'])->name('plan.reporte');
-Route::get('/{orden}/reporte-orden', [PlanController::class, 'reporte_pdf'])->name('orden.reporte');
+Route::get('/{orden}/reporte-orden', [OrdenController::class, 'reporte_pdf'])->name('orden.reporte');
 

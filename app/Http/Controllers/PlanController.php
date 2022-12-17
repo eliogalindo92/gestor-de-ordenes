@@ -52,7 +52,8 @@ class PlanController extends Controller
      */
     public function show(Plan $plan)
     {
-        return view('plan.mostrar_plan', compact('plan'));
+        $entidades = Entidad::orderByDesc('id')->get();
+        return view('plan.mostrar_plan', compact('plan', 'entidades'));
     }
 
     /**
@@ -95,7 +96,8 @@ class PlanController extends Controller
 
     public function reporte_pdf(Plan $plan)
     {
-        $pdf = Pdf::loadView('plan.exportar_plan', compact('plan'));
+        $entidades = Entidad::orderByDesc('id')->get();
+        $pdf = Pdf::loadView('plan.exportar_plan', compact('plan', 'entidades'));
         $pdf->setPaper('A4', 'landscape');
         return $pdf->stream();
     }

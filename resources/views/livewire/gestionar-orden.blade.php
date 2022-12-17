@@ -66,7 +66,7 @@
                 </td>
                 <td>
                  <a class="btn btn-sm btn-warning" href="{{ route('orden.edit', $orden) }}">Editar</a>
-                 <a class="btn btn-sm btn-primary" href="{{ route('orden.show', $orden) }}">Mostrar</a>
+                 <a class="btn btn-sm btn-primary" href="{{ route('orden.show', $orden, $entidades) }}">Mostrar</a>
                 </td>
             </tr>
         @endforeach

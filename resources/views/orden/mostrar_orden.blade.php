@@ -11,14 +11,57 @@
     @endsection
     @section('clase_form', 'card')
     @section('formulario')
-    <ul>
-        <li>
-           Orden de despacho número: {{$orden->numero_orden}}
-        </li>
-        <li>
-            Fecha de elaboración: {{$orden->fecha_elaboracion}}
-        </li>
-    </ul>
+        <div class="container-fluid">
+            <h3 align="center">Orden de despacho N°:  {{$orden->numero_orden}}</h3>
+           <div class="row-content">
+               <label><strong>Fecha de elaboración:</strong> <i>{{$orden->fecha_elaboracion}}</i></label>
+           </div>
+            <div class="row-content">
+                @foreach($entidades as $entidad)
+                    @if($orden->id_entidad == $entidad->id)
+               <label><strong>Realizada para:</strong> <i>{{$entidad->nombre_entidad}}</i></label>
+                    @endif
+                @endforeach
+            </div>
+            <div class="row-content">
+                <table class="table table-stripped table-hover">
+                    <thead>
+                    <th>
+                        Código del producto
+                    </th>
+                    <th>
+                        Descripción del producto
+                    </th>
+                    <th>
+                        U/M
+                    </th>
+                    <th>
+                        Cantidad ordenada
+                    </th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                {{$orden -> codigo_producto}}
+                            </td>
+                            <td>
+                                {{$orden -> descripcion_producto}}
+                            </td>
+                            <td>
+                                {{$orden -> unidad_de_medida}}
+                            </td>
+                            <td>
+                                {{$orden -> almacen}}
+                            </td>
+                            <td>
+                                {{$orden -> existencia_en_almacen}}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
             <form class="row g-3" action="{{route('orden.destroy', $orden)}}" method="post">
                 @csrf
                 @method('delete')
