@@ -56,7 +56,7 @@
 </div>
 
     <!--Creo sub-menú y tabla generada dentro del container-->
-    <div class="container shadow bg-white" id="contenido_principal">
+    <div class="container-fluid shadow bg-white" id="contenido_principal">
         <h2>
             @yield('titulo_principal')
         </h2>
