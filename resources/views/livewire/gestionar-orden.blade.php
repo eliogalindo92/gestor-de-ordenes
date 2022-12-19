@@ -4,7 +4,7 @@
         <div class="col-sm-3">
             <label for="BarraBuscar" class="form-label">Buscar orden</label>
             <input type="search" class="form-control" name="barra_buscar" id="BarraBuscar"
-                   placeholder="Escriba aquí para realizar búsqueda" wire:model="busqueda">
+                   placeholder="Escriba aquí para realizar una búsqueda" wire:model="busqueda">
         </div>
     </div>
     <table class="table table-stripped table-hover">

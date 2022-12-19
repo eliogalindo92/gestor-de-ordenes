@@ -8,7 +8,7 @@
 
 @section('sub-menu')
     <a class="btn btn-sm btn-outline-dark" href="{{route('orden.create')}}">Elaborar orden</a>
-    <a class="btn btn-sm btn-outline-dark" href="{{route('orden.index')}}">Listar órdenes</a>
+{{--    <a class="btn btn-sm btn-outline-dark" href="{{route('orden.index')}}">Listar órdenes</a>--}}
 @endsection
 
 @section('clase_tabla', 'card')
