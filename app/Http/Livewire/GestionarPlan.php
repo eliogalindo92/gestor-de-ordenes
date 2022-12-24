@@ -44,7 +44,8 @@ class GestionarPlan extends Component
 
         $consulta = Plan::orderByDesc('id');
         if ($this->busqueda != ''){
-            $consulta->where('numero_plan', 'LIKE', '%'.$this->busqueda.'%');
+            $consulta->where('numero_plan','LIKE', '%'.$this->busqueda.'%')
+                     ->orWhere('fecha_distribucion','LIKE', '%'.$this->busqueda.'%');
         }
         return $consulta;
     }

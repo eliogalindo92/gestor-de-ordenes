@@ -49,7 +49,10 @@ class GestionarOrden extends Component
 
         $consulta = Orden::orderByDesc('id');
         if ($this->busqueda != ''){
-            $consulta->where('numero_orden', 'LIKE', '%'.$this->busqueda.'%');
+            $consulta->where('numero_orden', 'LIKE', '%'.$this->busqueda.'%')
+                     ->orWhere('fecha_elaboracion','LIKE', '%'.$this->busqueda.'%')
+                     ->orWhere('codigo_producto','LIKE', '%'.$this->busqueda.'%')
+                     ->orWhere('descripcion_producto','LIKE', '%'.$this->busqueda.'%');
         }
         return $consulta;
     }

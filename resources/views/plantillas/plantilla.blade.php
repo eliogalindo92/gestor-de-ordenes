@@ -5,15 +5,8 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!--Estilos-->
-    <link rel="stylesheet" href="{{asset('css/estilos.css')}}">
-    <!--Bootstrap-->
-    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
-    <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
-    <!--AlertifyJS-->
-    <link rel="stylesheet" type="text/css" href="{{asset('css/themes/default.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('css/alertify.css')}}">
-    <script src="{{asset('js/alertify.min.js')}}"></script>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+
     <!--Livewire-->
     @livewireStyles
     <title>@yield('titulo')</title>

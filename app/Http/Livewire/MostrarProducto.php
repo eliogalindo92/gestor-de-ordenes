@@ -39,7 +39,9 @@ class MostrarProducto extends Component
 
         $consulta = Producto::orderByDesc('id');
         if ($this->busqueda != ''){
-            $consulta->where('codigo_producto', 'LIKE', '%'.$this->busqueda.'%');
+            $consulta->where('codigo_producto', 'LIKE', '%'.$this->busqueda.'%')
+                     ->orWhere('descripcion_producto','LIKE', '%'.$this->busqueda.'%')
+                     ->orWhere('almacen','LIKE', '%'.$this->busqueda.'%');
         }
         return $consulta;
     }

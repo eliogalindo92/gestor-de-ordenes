@@ -41,8 +41,12 @@
                 </td>
                 <td>
 
-                    <a class="btn btn-sm btn-warning" href="{{ route('plan.edit', $plan) }}">Editar</a>
-                    <a class="btn btn-sm btn-primary" href="{{ route('plan.show', $plan, $entidades) }}">Mostrar</a>
+                    <a class="btn btn-sm btn-warning" href="{{ route('plan.edit', $plan) }}">
+                        <i class="bi bi-pencil"></i>
+                    </a>
+                    <a class="btn btn-sm btn-primary" href="{{ route('plan.show', $plan, $entidades) }}">
+                        <i class="bi bi-eye"></i>
+                    </a>
                 </td>
             </tr>
         @endforeach

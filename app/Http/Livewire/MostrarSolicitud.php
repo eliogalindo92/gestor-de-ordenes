@@ -45,7 +45,9 @@ class MostrarSolicitud extends Component
 
         $consulta = Solicitud::orderByDesc('id');
         if ($this->busqueda != ''){
-            $consulta->where('numero_solicitud', 'LIKE', '%'.$this->busqueda.'%');
+            $consulta->where('numero_solicitud', 'LIKE', '%'.$this->busqueda.'%')
+                     ->orWhere('fecha_solicitud','LIKE', '%'.$this->busqueda.'%')
+                     ->orWhere('descripcion_producto','LIKE', '%'.$this->busqueda.'%');
         }
         return $consulta;
     }
