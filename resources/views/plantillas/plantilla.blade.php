@@ -66,9 +66,9 @@
             <h4 id="nombre_tabla">
                 @yield('nombre_tabla')
             </h4>
+            @yield('alerta')
             @yield('tabla')
         </div>
-            @yield('alerta')
     </div>
 </body>
 

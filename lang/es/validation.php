@@ -168,6 +168,18 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'numero_orden' => 'Número de orden',
+        'id_entidad' => 'Entidad solicitante',
+        'fecha_elaboracion' => 'Fecha de elaboración',
+        'cantidad_ordenada' => 'Cantidad ordenada',
+        'codigo_producto' => 'Código del producto',
+        'unidad_de_medida' => 'Unidad de medida',
+        'existencia_en_almacen' => 'Existencia en almacén',
+        'descripcion_producto' => 'Descripción del producto',
+        'numero_plan' => 'Número del plan',
+        'fecha_distribucion' => 'Fecha de distribución',
+
+    ],
 
 ];

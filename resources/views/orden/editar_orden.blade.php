@@ -18,16 +18,5 @@
             <x-form-orden :entidades="$entidades" :productos="$productos" :orden="$orden"/>
         </form>
     @endsection
-    @section('alerta')
-        @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
-    @endsection
 @endsection
 

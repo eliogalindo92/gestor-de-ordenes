@@ -1,8 +1,17 @@
 <div class="table-responsive">
     <div class="row">
-        <div class="col-sm-9"></div>
+        <div class="col-sm-12">
+            @section('alerta')
+                @if(session('estado'))
+                    <div class="alert alert-success" style="text-align: center">
+                        {{session('estado')}}
+                    </div>
+                @endif
+            @endsection
+        </div>
+        <div class="col-sm-9">
+        </div>
         <div class="col-sm-3">
-            <label for="BarraBuscar" class="form-label">Buscar plan</label>
             <input type="search" class="form-control" name="barra_buscar" id="BarraBuscar" placeholder="Escriba aquí para realizar una búsqueda" wire:model="busqueda">
         </div>
     </div>

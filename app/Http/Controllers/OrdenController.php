@@ -49,8 +49,9 @@ class OrdenController extends Controller
     public function store(OrdenRequest $request)
     {
         $datos = $request->validated();
-        $orden=Orden::create($datos);
-        return redirect()->route('orden.index');
+        Orden::create($datos);
+        session()->flash('estado', 'Orden creada con éxito');
+        return to_route('orden.index');
     }
 
     /**
@@ -89,7 +90,8 @@ class OrdenController extends Controller
     {
         $datos = $request->validated();
         $orden->update($datos);
-        return redirect()->route('orden.index');
+        session()->flash('estado', 'Orden actualizada con éxito');
+        return to_route('orden.index');
     }
 
     /**
@@ -101,7 +103,8 @@ class OrdenController extends Controller
     public function destroy(Orden $orden)
     {
         $orden->delete();
-        return redirect()->route('orden.index');
+        session()->flash('estado', 'Orden eliminada con éxito');
+        return to_route('orden.index');
     }
 
     public function reporte_pdf(Orden $orden)

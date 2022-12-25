@@ -40,8 +40,9 @@ class PlanController extends Controller
     public function store(PlanRequest $request)
     {
         $datos = $request->validated();
-        $plan=Plan::create($datos);
-        return redirect()->route('plan.index');
+        Plan::create($datos);
+        session()->flash('estado', 'Plan creado con éxito');
+        return to_route('plan.index');
     }
 
     /**
@@ -79,7 +80,8 @@ class PlanController extends Controller
     {
         $datos = $request->validated();
         $plan->update($datos);
-        return redirect()->route('plan.index');
+        session()->flash('estado', 'Plan actualizado con éxito');
+        return to_route('plan.index');
     }
 
     /**
@@ -91,7 +93,8 @@ class PlanController extends Controller
     public function destroy(Plan $plan)
     {
         $plan->delete();
-        return redirect()->route('plan.index');
+        session()->flash('estado', 'Plan eliminado con éxito');
+        return to_route('plan.index');
     }
 
     public function reporte_pdf(Plan $plan)
